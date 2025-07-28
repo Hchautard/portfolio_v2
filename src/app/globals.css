@@ -20,7 +20,11 @@
 }
 
 body {
-    background: var(--background);
+    /*background: var(--background);*/
+    background-image: url('../assets/images/rainbow-discs.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
