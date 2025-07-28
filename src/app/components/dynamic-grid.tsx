@@ -1,5 +1,6 @@
 'use client';
 import { Responsive as ResponsiveGridLayout } from 'react-grid-layout';
+import Card from '@/app/components/card';
 
 export default function DynamicGrid() {
   const layouts = {
@@ -39,20 +40,20 @@ export default function DynamicGrid() {
   };
   return (
     <ResponsiveGridLayout
-      className="layout"
+      className="layout flex items-center justify-center gap-4"
       layouts={layouts}
       breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
       cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
     >
-      <div className="glass-card" key="1">
-        1
-      </div>
-      <div className="glass-card" key="2">
-        2
-      </div>
-      <div className="glass-card" key="3">
-        3
-      </div>
+      <Card className="glass-card" key="a">
+        This is a Card
+      </Card>
+      <Card className="glass-card" key="b">
+        B
+      </Card>
+      <Card className="glass-card" key="c">
+        C
+      </Card>
     </ResponsiveGridLayout>
   );
 }
