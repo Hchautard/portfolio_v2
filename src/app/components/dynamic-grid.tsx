@@ -41,7 +41,7 @@ export default function DynamicGrid() {
   return (
     <ResponsiveGridLayout
       className="layout flex items-center justify-center gap-4"
-      layouts={layouts}
+      layouts={layout}
       breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
       cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
     >
@@ -49,10 +49,10 @@ export default function DynamicGrid() {
         This is a Card
       </Card>
       <Card className="glass-card" key="b">
-        B
+        This is a Card
       </Card>
       <Card className="glass-card" key="c">
-        C
+        This is a Card
       </Card>
     </ResponsiveGridLayout>
   );

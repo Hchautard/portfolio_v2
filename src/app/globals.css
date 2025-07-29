@@ -5,12 +5,12 @@
     --foreground: #171717;
 }
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
-}
+/*@theme inline {*/
+/*    --color-background: var(--background);*/
+/*    --color-foreground: var(--foreground);*/
+/*    --font-sans: var(--font-geist-sans);*/
+/*    --font-mono: var(--font-geist-mono);*/
+/*}*/
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -21,7 +21,7 @@
 
 body {
     /*background: var(--background);*/
-    background-image: url('../assets/images/rainbow-discs.jpg');
+    background-image: url('../assets/images/flower-roses-dude.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,10 +29,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+.glass {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+    inset 0 4px 20px rgba(255, 255, 255, 0.3);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2rem;
+        backdrop-filter: blur(1px);
+        box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+        inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+        opacity: 0.6;
+        z-index: -1;
+        filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+    }
 }
