@@ -3,7 +3,7 @@
 export default function Card({ children, className = '' }) {
   return (
     <div
-      className={`glass flex flex-col items-center justify-center p-4 rounded-lg shadow-lg ${className}`}
+      className={`glass flex flex-col items-center justify-center p-4 rounded-lg shadow-lg ${className} hover:scale-[1.03] transition-transform duration-300`}
     >
       {children}
     </div>
