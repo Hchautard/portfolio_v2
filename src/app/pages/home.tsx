@@ -13,21 +13,21 @@ export default function Home() {
       setActualView(['projects']);
       const arrowElement = document.querySelector('.arrow');
       if (arrowElement) {
-        arrowElement.className = 'arrow glass rotate-180';
+        arrowElement.className = 'arrow glass m-10 rotate-180';
       }
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setActualView(['presentation']);
       const arrowElement = document.querySelector('.arrow');
       if (arrowElement) {
-        arrowElement.className = 'arrow glass';
+        arrowElement.className = 'arrow glass m-10 rotate-0';
       }
     }
   }
 
   return (
     <div>
-      <main className="items-center sm:items-start justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <main className="items-center sm:items-start justify-items-center min-h-screen p-8 pb-20 sm:p-20">
         <div className="presentation-grid">
           <DynamicGrid />
         </div>
