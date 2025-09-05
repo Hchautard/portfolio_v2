@@ -4,10 +4,12 @@ export default function Card({
   children,
   className = '',
   onMouseEnter,
+  onClick,
 }: {
   children: React.ReactNode;
   className?: string;
   onMouseEnter?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }) {
   function handleMouseEnter() {
     if (onMouseEnter) {
@@ -15,10 +17,17 @@ export default function Card({
     }
   }
 
+  function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    if (onClick) {
+      onClick(e);
+    }
+  }
+
   return (
     <div
       className={`glass flex flex-col items-center justify-center p-4 rounded-lg shadow-lg ${className} hover:scale-[1.03] transition-transform duration-300`}
       onMouseEnter={handleMouseEnter}
+      onClick={handleClick}
     >
       {children}
     </div>
