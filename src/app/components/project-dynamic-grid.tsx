@@ -1,7 +1,9 @@
 'use client';
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import Card from '@/app/components/card';
+import NestedCard from '@/app/components/nested-card';
 import '../styles/project-dynamic-grid.css';
+import { bool } from 'sharp';
 
 export const useSound = (soundPath: string, throttleTime = 5000) => {
   const audioRef = useRef(null as HTMLAudioElement | null);
@@ -26,12 +28,14 @@ export const useSound = (soundPath: string, throttleTime = 5000) => {
   }, [soundPath, throttleTime]);
 };
 
-export const zoomInProject = (
+export const openNestedCard = (
   bgGradient: string,
-  element: HTMLElement | null
+  childElement: HTMLElement
 ) => {
-  if (element) {
-    element.className += ` scale-[1.3] transition-transform duration-300`;
+  if (childElement && childElement.classList.contains('hidden')) {
+    childElement.classList.remove('hidden');
+  } else {
+    childElement.classList.add('hidden');
   }
 };
 export default function ProjectDynamicGrid() {
@@ -91,19 +95,22 @@ export default function ProjectDynamicGrid() {
             key={index}
             onMouseEnter={playSound}
             onClick={(e) =>
-              zoomInProject(project.gradient, e.currentTarget as HTMLElement)
+              openNestedCard(
+                project.gradient,
+                e.currentTarget.children[0] as HTMLElement
+              )
             }
             className={`glass-card one`}
           >
-            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-            <p className="text-sm">{project.description}</p>
-            {/*{project.image && (*/}
-            {/*  <img*/}
-            {/*    src={project.image}*/}
-            {/*    alt={project.title}*/}
-            {/*    className="w-full h-32 object-cover mt-2 rounded"*/}
-            {/*  />*/}
-            {/*)}*/}
+            Clique ici !
+            <NestedCard
+              id={index}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              link={project.link}
+              className={project.gradient}
+            />
           </Card>
         ))
       ) : (
