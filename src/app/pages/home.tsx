@@ -13,29 +13,28 @@ export default function Home() {
       setActualView(['projects']);
       const arrowElement = document.querySelector('.arrow');
       if (arrowElement) {
-        arrowElement.className = 'arrow glass m-10 rotate-180';
+        arrowElement.classList.remove('rotate-0');
+        arrowElement.classList.add('rotate-180');
       }
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setActualView(['presentation']);
       const arrowElement = document.querySelector('.arrow');
       if (arrowElement) {
-        arrowElement.className = 'arrow glass m-10 rotate-0';
+        arrowElement.classList.remove('rotate-180');
+        arrowElement.classList.add('rotate-0');
       }
     }
   }
 
   return (
-    <div>
-      <main className="items-center sm:items-start justify-items-center min-h-screen p-8 pb-20 sm:p-20">
-        <div className="presentation-grid">
-          <DynamicGrid />
-        </div>
+    <main className="items-center m-auto justify-items-center min-h-screen p-8 pb-20 sm:p-20 ">
+      <DynamicGrid />
 
-        <div className="arrow glass m-10" onClick={transitionView}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+      <div className="arrow glass m-10 flex justify-center items-center mx-auto w-fit rotate-0" onClick={transitionView}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
@@ -53,6 +52,5 @@ export default function Home() {
           <ProjectDynamicGrid />
         </div>
       </main>
-    </div>
   );
 }
