@@ -3,7 +3,6 @@ import { useCallback, useRef, useState } from 'react';
 import Card from '@/app/components/card';
 import NestedCard from '@/app/components/nested-card';
 import '../styles/project-dynamic-grid.css';
-import { bool } from 'sharp';
 
 export const useSound = (soundPath: string, throttleTime = 5000) => {
   const audioRef = useRef(null as HTMLAudioElement | null);
