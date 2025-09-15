@@ -25,8 +25,13 @@
     --font-scada-regular: 'Scada-Regular', sans-serif;
 }
 
+.dark {
+    --background: #0B1215;
+    --foreground: #F8F8FF;
+}
+
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not(.dark):not(.light) {
         --background: #0B1215;
         --foreground: #F8F8FF;
     }
@@ -118,13 +123,25 @@
 }
 
 body {
-    /*background: var(--background);*/
     background-image: url('/assets/images/flower-roses-dude.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark body {
+    background-image: url('/assets/images/rainbow-discs.jpg');
+}
+
+.header {
+    position: fixed;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'CrimsonText-Bold', sans-serif;
+    font-size: 18px;
+    color: var(--foreground);
 }
 
 .glass {

@@ -2,6 +2,7 @@
 import DynamicGrid from '@/app/components/dynamic-grid';
 import ProjectDynamicGrid from '@/app/components/project-dynamic-grid';
 import Header from '@/app/components/header';
+import SwitchDarkMode from '@/app/components/switch-dark-mode';
 import { useState } from 'react';
 
 export default function Home() {
@@ -29,6 +30,9 @@ export default function Home() {
   return (
     <div>
       <Header />
+
+      <SwitchDarkMode />
+
       <main
         className="items-center sm:items-start justify-items-center min-h-screen p-8 pb-20 sm:p-20"
         id="main"
