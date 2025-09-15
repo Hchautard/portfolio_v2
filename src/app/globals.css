@@ -1,22 +1,120 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
+    --background: #F8F8FF;
+    --foreground: #0B1215;
+    --white: #F8F8FF;
+    --black: #0B1215;
 
-/*@theme inline {*/
-/*    --color-background: var(--background);*/
-/*    --color-foreground: var(--foreground);*/
-/*    --font-sans: var(--font-geist-sans);*/
-/*    --font-mono: var(--font-geist-mono);*/
-/*}*/
+    /* Variables de polices Crimson Text */
+    --font-crimson-text-bold: 'CrimsonText-Bold', serif;
+    --font-crimson-text-bold-italic: 'CrimsonText-BoldItalic', serif;
+    --font-crimson-text-italic: 'CrimsonText-Italic', serif;
+    --font-crimson-text-regular: 'CrimsonText-Regular', serif;
+    --font-crimson-text-semi-bold: 'CrimsonText-SemiBold', serif;
+    --font-crimson-text-semi-bold-italic: 'CrimsonText-SemiBoldItalic', serif;
+
+    /* Variables de polices Nunito */
+    --font-nunito-italic-variable: 'Nunito-Italic-VariableFont_wght', sans-serif;
+    --font-nunito-variable: 'Nunito-VariableFont_wght', sans-serif;
+
+    /* Variables de polices Scada */
+    --font-scada-bold: 'Scada-Bold', sans-serif;
+    --font-scada-bold-italic: 'Scada-BoldItalic', sans-serif;
+    --font-scada-italic: 'Scada-Italic', sans-serif;
+    --font-scada-regular: 'Scada-Regular', sans-serif;
+}
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+        --background: #0B1215;
+        --foreground: #F8F8FF;
     }
+}
+
+/* Déclarations @font-face pour charger les polices */
+@font-face {
+    font-family: 'CrimsonText-Bold';
+    src: url('/assets/font/Crimson_Text/CrimsonText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CrimsonText-BoldItalic';
+    src: url('/assets/font/Crimson_Text/CrimsonText-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CrimsonText-Italic';
+    src: url('/assets/font/Crimson_Text/CrimsonText-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CrimsonText-Regular';
+    src: url('/assets/font/Crimson_Text/CrimsonText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CrimsonText-SemiBold';
+    src: url('/assets/font/Crimson_Text/CrimsonText-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CrimsonText-SemiBoldItalic';
+    src: url('/assets/font/Crimson_Text/CrimsonText-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nunito-Italic-VariableFont_wght';
+    src: url('/assets/font/Nunito/static/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 1000;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Nunito-VariableFont_wght';
+    src: url('/assets/font/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 1000;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Scada-Bold';
+    src: url('/assets/font/Scada/Scada-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Scada-BoldItalic';
+    src: url('/assets/font/Scada/Scada-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Scada-Italic';
+    src: url('/assets/font/Scada/Scada-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Scada-Regular';
+    src: url('/assets/font/Scada/Scada-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -54,9 +152,4 @@ body {
         z-index: -1;
         filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
     }
-
-}
-
-.project-grid {
-    /*display: none;*/
 }
