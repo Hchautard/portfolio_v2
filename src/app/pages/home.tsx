@@ -3,6 +3,7 @@ import DynamicGrid from '@/app/components/dynamic-grid';
 import ProjectDynamicGrid from '@/app/components/project-dynamic-grid';
 import Header from '@/app/components/header';
 import SwitchDarkMode from '@/app/components/switch-dark-mode';
+import Contact from '@/app/pages/contact';
 import { useState } from 'react';
 
 export default function Home() {
@@ -43,10 +44,13 @@ export default function Home() {
           <DynamicGrid />
         </div>
 
-      <div className="arrow glass m-10 flex justify-center items-center mx-auto w-fit rotate-0" onClick={transitionView}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
+        <div
+          className="arrow glass m-10 flex justify-center items-center mx-auto w-fit rotate-0"
+          onClick={transitionView}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
@@ -81,8 +85,8 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="project-grid" id="contact">
-          <ProjectDynamicGrid />
+        <div id="contact" className="w-full col-span-full">
+          <Contact />
         </div>
       </main>
     </div>
