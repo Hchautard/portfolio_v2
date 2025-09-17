@@ -25,6 +25,14 @@
     --font-scada-regular: 'Scada-Regular', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-crimson-text-bold);
+}
+
+p {
+    font-family: var(--font-nunito-variable);
+}
+
 .dark {
     --background: #0B1215;
     --foreground: #F8F8FF;
