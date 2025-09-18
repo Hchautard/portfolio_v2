@@ -1,5 +1,30 @@
 'use client';
 import '../styles/contact.css';
+import { sendEmail } from '@/app/services/contact';
+import React from 'react';
+
+function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
+  event.preventDefault();
+
+  const form = event.target as HTMLFormElement;
+  const formData = new FormData(form);
+
+  const data = {
+    name: formData.get('name') as string,
+    email: formData.get('email') as string,
+    subject: formData.get('subject') as string,
+    message: formData.get('message') as string,
+  };
+  console.log(data);
+  sendEmail(data).then((response) => {
+    if (response.success) {
+      alert('Message envoyé avec succès !');
+      form.reset();
+    } else {
+      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+    }
+  });
+}
 
 export default function Contact() {
   return (
@@ -113,7 +138,7 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="submit-btn" onClick={handleSubmit}>
               Envoyer le message
             </button>
           </form>

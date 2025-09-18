@@ -9,23 +9,80 @@ import { useState } from 'react';
 export default function Home() {
   const [actualView, setActualView] = useState(['presentation']);
 
-  function transitionView() {
+  function transitionView(direction) {
     const projectSection = document.querySelector('.project-grid');
-    if (projectSection && actualView[0] === 'presentation') {
-      projectSection.scrollIntoView({ behavior: 'smooth' });
-      setActualView(['projects']);
-      const arrowElement = document.querySelector('.arrow');
-      if (arrowElement) {
-        arrowElement.classList.remove('rotate-0');
-        arrowElement.classList.add('rotate-180');
+    const contactSection = document.querySelector('#contact');
+    const arrowElements = document.querySelectorAll('.arrow');
+
+    if (direction === 'down') {
+      if (actualView[0] === 'presentation') {
+        // Transition vers la section projects
+        if (projectSection) {
+          projectSection.scrollIntoView({ behavior: 'smooth' });
+          setActualView(['projects']);
+
+          // Première flèche : rotation 180°
+          if (arrowElements[0]) {
+            arrowElements[0].classList.remove('rotate-0');
+            arrowElements[0].classList.add('rotate-180');
+          }
+          // Deuxième flèche : reste à 0°
+          if (arrowElements[1]) {
+            arrowElements[1].classList.remove('rotate-180');
+            arrowElements[1].classList.add('rotate-0');
+          }
+        }
+      } else if (actualView[0] === 'projects') {
+        // Transition vers la section contact
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+          setActualView(['contact']);
+
+          // Première flèche : reste à 180°
+          if (arrowElements[0]) {
+            arrowElements[0].classList.remove('rotate-0');
+            arrowElements[0].classList.add('rotate-180');
+          }
+          // Deuxième flèche : rotation 180°
+          if (arrowElements[1]) {
+            arrowElements[1].classList.remove('rotate-0');
+            arrowElements[1].classList.add('rotate-180');
+          }
+        }
       }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setActualView(['presentation']);
-      const arrowElement = document.querySelector('.arrow');
-      if (arrowElement) {
-        arrowElement.classList.remove('rotate-180');
-        arrowElement.classList.add('rotate-0');
+    } else if (direction === 'up') {
+      if (actualView[0] === 'contact') {
+        // Retour vers la section projects
+        if (projectSection) {
+          projectSection.scrollIntoView({ behavior: 'smooth' });
+          setActualView(['projects']);
+
+          // Première flèche : reste à 180°
+          if (arrowElements[0]) {
+            arrowElements[0].classList.remove('rotate-0');
+            arrowElements[0].classList.add('rotate-180');
+          }
+          // Deuxième flèche : retour à 0°
+          if (arrowElements[1]) {
+            arrowElements[1].classList.remove('rotate-180');
+            arrowElements[1].classList.add('rotate-0');
+          }
+        }
+      } else if (actualView[0] === 'projects') {
+        // Retour vers la section presentation
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setActualView(['presentation']);
+
+        // Première flèche : retour à 0°
+        if (arrowElements[0]) {
+          arrowElements[0].classList.remove('rotate-180');
+          arrowElements[0].classList.add('rotate-0');
+        }
+        // Deuxième flèche : reste à 0°
+        if (arrowElements[1]) {
+          arrowElements[1].classList.remove('rotate-180');
+          arrowElements[1].classList.add('rotate-0');
+        }
       }
     }
   }
@@ -46,7 +103,9 @@ export default function Home() {
 
         <div
           className="arrow glass m-10 flex justify-center items-center mx-auto w-fit rotate-0"
-          onClick={transitionView}
+          onClick={() =>
+            transitionView(actualView[0] === 'presentation' ? 'down' : 'up')
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +127,12 @@ export default function Home() {
           <ProjectDynamicGrid />
         </div>
 
-        <div className="arrow glass m-10" onClick={transitionView}>
+        <div
+          className="arrow glass m-20 flex justify-center items-center mx-auto w-fit rotate-0"
+          onClick={() =>
+            transitionView(actualView[0] === 'contact' ? 'up' : 'down')
+          }
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
