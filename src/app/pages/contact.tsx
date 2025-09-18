@@ -3,10 +3,10 @@ import '../styles/contact.css';
 import { sendEmail } from '@/app/services/contact';
 import React from 'react';
 
-function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
+function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
   event.preventDefault();
 
-  const form = event.target as HTMLFormElement;
+  const form = event.currentTarget; // Utiliser currentTarget pour le form
   const formData = new FormData(form);
 
   const data = {
@@ -15,7 +15,7 @@ function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     subject: formData.get('subject') as string,
     message: formData.get('message') as string,
   };
-  console.log(data);
+
   sendEmail(data).then((response) => {
     if (response.success) {
       alert('Message envoyé avec succès !');
@@ -74,7 +74,7 @@ export default function Contact() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                  d="M2.25 6.75c0 8.284 6.716 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                 />
               </svg>
             </div>
@@ -112,7 +112,7 @@ export default function Contact() {
         </div>
 
         <div className="contact-form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Nom</label>
               <input type="text" id="name" name="name" required />
@@ -138,7 +138,7 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-btn" onClick={handleSubmit}>
+            <button type="submit" className="submit-btn">
               Envoyer le message
             </button>
           </form>
