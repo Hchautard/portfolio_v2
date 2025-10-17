@@ -20,7 +20,7 @@ function transitionView(
 export default function Header() {
   const anchorList = [
     { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Projets', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
