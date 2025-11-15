@@ -5,6 +5,10 @@ import '../styles/dynamic-grid.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { SocialIcon } from 'react-social-icons';
+import Skeleton from '@mui/material/Skeleton';
+import EducationBlock from '@/app/components/grid-content/education-block';
+import ExperienceBlock from '@/app/components/grid-content/experience-block';
+import ProfileBlock from '@/app/components/grid-content/profile-block';
 
 export default function DynamicGrid() {
   const socialNetworks = [
@@ -14,12 +18,17 @@ export default function DynamicGrid() {
 
   return (
     <div className="wrapper">
-      <Card className="glass-card one">This is a Card</Card>
+      <Card className="glass-card one">
+        <ProfileBlock />
+      </Card>
       <div className="glass-card two">
         <Card className="two-one">Nested Card</Card>
         <Card className="two-two">This is a Card</Card>
       </div>
-      <Card className="glass-card three">This is a Card</Card>
+      <Card className="glass-card three">
+        <EducationBlock />
+        <ExperienceBlock />
+      </Card>
       <Card className="glass-card four">This is a Card</Card>
 
       {/* Map */}
@@ -37,7 +46,7 @@ export default function DynamicGrid() {
             color="#ffffff"
           />
         </div>
-        <h1>Me contacter</h1>
+        <h1>Contactez moi !</h1>
       </Card>
 
       {/*  Social Networks*/}

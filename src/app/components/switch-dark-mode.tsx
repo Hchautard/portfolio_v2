@@ -4,7 +4,7 @@ import '../styles/switch-dark-mode.css';
 export default function SwitchDarkMode() {
   function toggleDarkMode() {
     const htmlElement = document.documentElement;
-    console.log('Toggling dark mode', htmlElement.classList);
+
     if (htmlElement.classList.contains('dark')) {
       htmlElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');

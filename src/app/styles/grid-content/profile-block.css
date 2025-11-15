@@ -1,0 +1,112 @@
+.profile-block {
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    color: white;
+    position: relative;
+}
+
+/* Photo et étoiles */
+.profile-image-container {
+    position: relative;
+    /*width: 280px;*/
+    /*height: 280px;*/
+    /*margin: 0 auto;*/
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-image {
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+    opacity: 0.9;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 15px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 20px;
+    right: 25px;
+    font-size: 16px;
+    animation-delay: 0.5s;
+}
+
+.star-3 {
+    bottom: 30px;
+    left: 25px;
+    font-size: 14px;
+    animation-delay: 1s;
+}
+
+.star-4 {
+    bottom: 25px;
+    left: 50px;
+    font-size: 12px;
+    animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+/* Badge de présentation */
+.intro-badge {
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+    border-radius: 20px;
+    padding: 24px;
+    color: var(--foreground);
+    position: relative;
+    height: 50%;
+
+    margin-top: 3%;
+    right: 10%;
+}
+
+.intro-text {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+}
+
+.intro-quote {
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 500;
+    position: relative;
+    padding: 0 8px;
+}
+
+.quote-mark {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0;
+    position: relative;
+    top: 8px;
+    opacity: 0.7;
+}
