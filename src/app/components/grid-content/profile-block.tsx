@@ -21,13 +21,13 @@ export default function ProfileBlock() {
       </div>
 
       {/* Badge de présentation */}
-      <div className="intro-badge">
-        <h2 className="intro-text">Enchanté, Hugo</h2>
-        <p className="intro-quote">
-          <span className="quote-mark">"</span>
-          Passionate designer driven by creativity & learning!
-          <span className="quote-mark">"</span>
-        </p>
+      <div className="intro-wrapper">
+        <div className="intro-badge">
+          <h2 className="intro-text">Enchanté, Hugo.</h2>
+        </div>
+        <div className="intro-badge">
+          <p className="intro-quote">Je pense que je peux vous être utile :)</p>
+        </div>
       </div>
     </div>
   );

@@ -2,15 +2,12 @@
 import Card from '@/app/components/card';
 import LeafletMap from '@/app/components/leaflet-map-wrapper';
 import '../styles/dynamic-grid.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { SocialIcon } from 'react-social-icons';
-import Skeleton from '@mui/material/Skeleton';
 import EducationBlock from '@/app/components/grid-content/education-block';
 import ExperienceBlock from '@/app/components/grid-content/experience-block';
 import ProfileBlock from '@/app/components/grid-content/profile-block';
 import ContactBlock from '@/app/components/grid-content/contact-block';
 import NetworkBlock from '@/app/components/grid-content/network-block';
+import StackBlock from '@/app/components/grid-content/stack-block';
 
 export default function DynamicGrid() {
   return (
@@ -19,7 +16,9 @@ export default function DynamicGrid() {
         <ProfileBlock />
       </Card>
       <div className="glass-card two">
-        <Card className="two-one">Nested Card</Card>
+        <Card className="two-one">
+          <StackBlock />
+        </Card>
         <Card className="two-two">This is a Card</Card>
       </div>
       <Card className="glass-card three">

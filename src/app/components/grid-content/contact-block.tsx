@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import '../../styles/grid-content/contact-block.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';

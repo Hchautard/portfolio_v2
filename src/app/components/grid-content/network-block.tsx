@@ -18,6 +18,7 @@ export default function NetworkBlock() {
         <SocialIcon
           key={network.label}
           url={network.url}
+          target={network.label != 'Mail' ? '_blank' : undefined}
           style={{ height: 100, width: 100, margin: '0 10px' }}
           fgColor="#fff"
           bgColor="transparent"
