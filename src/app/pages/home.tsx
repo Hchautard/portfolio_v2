@@ -9,8 +9,8 @@ import { useState } from 'react';
 export default function Home() {
   const [actualView, setActualView] = useState(['presentation']);
 
-  function transitionView(direction) {
-    const projectSection = document.querySelector('.project-grid');
+  function transitionView(direction: string) {
+    const projectSection = document.querySelector('#projects');
     const contactSection = document.querySelector('#contact');
     const arrowElements = document.querySelectorAll('.arrow');
 

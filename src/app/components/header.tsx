@@ -6,7 +6,7 @@ function transitionView(
   anchorName: string
 ) {
   e.preventDefault();
-  const section = document.querySelector(`#${anchorName}`);
+  const section = document.querySelector(`${anchorName}`);
   if (section) {
     const rect = section.getBoundingClientRect();
     const offsetTop = window.pageYOffset + rect.top - 100;
@@ -19,7 +19,7 @@ function transitionView(
 
 export default function Header() {
   const anchorList = [
-    { name: 'Home', href: '#home' },
+    { name: 'Accueil', href: '#home' },
     { name: 'Projets', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -34,7 +34,7 @@ export default function Header() {
                 <a
                   href={anchor.href}
                   className="nav-link"
-                  onClick={(e) => transitionView(e, anchor.name.toLowerCase())}
+                  onClick={(e) => transitionView(e, anchor.href.toLowerCase())}
                 >
                   {anchor.name}
                 </a>

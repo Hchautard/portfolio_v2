@@ -1,5 +1,5 @@
 'use client';
-// import '../styles/contact.css';
+import '../styles/contact.css';
 import { sendEmail } from '@/app/services/contact';
 import React from 'react';
 
