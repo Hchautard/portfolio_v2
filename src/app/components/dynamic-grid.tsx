@@ -9,13 +9,10 @@ import Skeleton from '@mui/material/Skeleton';
 import EducationBlock from '@/app/components/grid-content/education-block';
 import ExperienceBlock from '@/app/components/grid-content/experience-block';
 import ProfileBlock from '@/app/components/grid-content/profile-block';
+import ContactBlock from '@/app/components/grid-content/contact-block';
+import NetworkBlock from '@/app/components/grid-content/network-block';
 
 export default function DynamicGrid() {
-  const socialNetworks = [
-    { url: 'https://linkedin.com/in/hchautard ', label: 'LinkedIn' },
-    { url: 'https://github.com/Hchautard', label: 'GitHub' },
-  ];
-
   return (
     <div className="wrapper">
       <Card className="glass-card one">
@@ -26,8 +23,8 @@ export default function DynamicGrid() {
         <Card className="two-two">This is a Card</Card>
       </div>
       <Card className="glass-card three">
-        <EducationBlock />
         <ExperienceBlock />
+        <EducationBlock />
       </Card>
       <Card className="glass-card four">This is a Card</Card>
 
@@ -38,29 +35,12 @@ export default function DynamicGrid() {
 
       {/* Contact Me */}
       <Card className="glass-card six">
-        <div className="six-header">
-          <h6>Des questions ?</h6>
-          <FontAwesomeIcon
-            icon={faArrowUpRightFromSquare}
-            size="2x"
-            color="#ffffff"
-          />
-        </div>
-        <h1>Contactez moi !</h1>
+        <ContactBlock />
       </Card>
 
       {/*  Social Networks*/}
       <Card className="glass-card seven">
-        {socialNetworks.map((network) => (
-          <SocialIcon
-            key={network.label}
-            url={network.url}
-            style={{ height: 100, width: 100, margin: '0 10px' }}
-            fgColor="#fff"
-            bgColor="transparent"
-            aria-label={network.label}
-          />
-        ))}
+        <NetworkBlock />
       </Card>
     </div>
   );
