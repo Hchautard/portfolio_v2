@@ -1,8 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
 import '../../styles/grid-content/contact-block.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { SocialIcon } from 'react-social-icons';
 
 export default function NetworkBlock() {
@@ -13,16 +10,17 @@ export default function NetworkBlock() {
   ];
 
   return (
-    <div>
+    <div className="network-block">
       {socialNetworks.map((network) => (
         <SocialIcon
           key={network.label}
           url={network.url}
           target={network.label != 'Mail' ? '_blank' : undefined}
-          style={{ height: 100, width: 100, margin: '0 10px' }}
+          // style={{ height: 100, width: 100, margin: '0 10px' }}
           fgColor="#fff"
           bgColor="transparent"
           aria-label={network.label}
+          className={'badge'}
         />
       ))}
     </div>
