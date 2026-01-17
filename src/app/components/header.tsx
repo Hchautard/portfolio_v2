@@ -21,7 +21,6 @@ export default function Header() {
   const anchorList = [
     { name: 'Accueil', href: '#home' },
     { name: 'Projets', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   return (
