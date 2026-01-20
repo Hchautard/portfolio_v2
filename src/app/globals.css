@@ -130,6 +130,20 @@ p, span {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Casselin';
+    src: url('/assets/font/Casselin/Casselin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Casselin';
+    src: url('/assets/font/Casselin/Casselin_Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 body {
     background-image: url('/assets/images/green_misc.jpg');
     background-size: cover;
