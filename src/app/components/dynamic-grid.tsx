@@ -9,6 +9,7 @@ import ContactBlock from '@/app/components/grid-content/contact-block';
 import StackBlock from '@/app/components/grid-content/stack-block';
 import Project from '@/app/pages/project';
 import { FaStar } from 'react-icons/fa6';
+import AboutMeBlock from '@/app/components/grid-content/about-me-block';
 
 export default function DynamicGrid() {
   return (
@@ -38,9 +39,9 @@ export default function DynamicGrid() {
         <LeafletMap />
       </Card>
 
-      {/* Contact Me */}
+      {/* About Me */}
       <Card className="glass-card six">
-        <ContactBlock />
+        <AboutMeBlock />
       </Card>
     </div>
   );

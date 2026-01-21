@@ -90,7 +90,7 @@ export default function Home() {
         {/*<div className="project-grid" id="projects"></div>*/}
       </main>
 
-      <Project />
+      {/*<Project />*/}
     </div>
   );
 }

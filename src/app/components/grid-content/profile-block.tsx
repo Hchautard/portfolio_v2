@@ -3,12 +3,19 @@ import Image from 'next/image';
 import '../../styles/grid-content/profile-block.css';
 import NetworkBlock from '@/app/components/grid-content/network-block';
 import { SocialIcon } from 'react-social-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMarker,
+  faBriefcase,
+  faSmile,
+  faCodeCommit,
+} from '@fortawesome/free-solid-svg-icons';
 
 const informations = [
-  { icon: 'fa fa-map-marker', text: 'Montpellier' },
-  { icon: 'fa fa-briefcase', text: 'Software Developer' },
-  { icon: 'fa fa-smile', text: 'Happy' },
-  { icon: 'fa fa-code', text: 'Coding Enthusiast' },
+  { icon: faMarker, text: 'Montpellier' },
+  { icon: faBriefcase, text: 'Software Developer' },
+  { icon: faSmile, text: 'Happy' },
+  { icon: faCodeCommit, text: 'Coding Enthusiast' },
 ];
 
 export default function ProfileBlock() {
@@ -43,7 +50,7 @@ export default function ProfileBlock() {
       <div className="profile-infos">
         {informations.map((info) => (
           <div key={info.text} className="info-item badge">
-            <i className={info.icon} aria-hidden="true"></i>
+            <FontAwesomeIcon icon={info.icon} />
             <span>{info.text}</span>
           </div>
         ))}
