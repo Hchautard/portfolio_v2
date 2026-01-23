@@ -12,8 +12,8 @@ export default function LeafletMap({
   onMouseEnter?: () => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }) {
-  const lat = 43.7884778;
-  const lon = 4.8300777;
+  const lat = 43.61092;
+  const lon = 3.87723;
 
   // Fix pour les icônes Leaflet
   useEffect(() => {
