@@ -1,0 +1,179 @@
+/* Page d'accueil - Style carte de visite */
+
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 40px 40px;
+}
+
+/* Hero section */
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.home-hero h1 {
+    font-family: 'Casselin', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+}
+
+.home-hero .subtitle {
+    font-family: var(--font-crimson-text-italic);
+    font-size: 1.25rem;
+    color: var(--foreground-muted);
+    margin-bottom: 2rem;
+}
+
+/* Séparateur décoratif */
+.home-hero .divider {
+    width: 80px;
+    height: 1px;
+    background: var(--accent);
+    margin: 1.5rem 0;
+}
+
+.home-hero p {
+    font-family: var(--font-crimson-text-regular);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    max-width: 600px;
+}
+
+/* CTA Buttons */
+.home-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.home-cta .btn-primary {
+    font-family: 'Casselin', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: var(--foreground);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.home-cta .btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.home-cta .btn-secondary {
+    font-family: 'Casselin', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.home-cta .btn-secondary:hover {
+    background: var(--foreground);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Section grid principale */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Cartes de la home */
+.home-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.home-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+.home-card h3 {
+    font-family: 'Casselin', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    color: var(--foreground);
+}
+
+.home-card p {
+    font-family: var(--font-crimson-text-regular);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--foreground-muted);
+}
+
+/* Footer de page */
+.home-footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+}
+
+.home-footer p {
+    font-family: var(--font-crimson-text-regular);
+    font-size: 0.9rem;
+    color: var(--foreground-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-cta .btn-primary,
+    .home-cta .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-container {
+        padding: 60px 20px 20px;
+    }
+}

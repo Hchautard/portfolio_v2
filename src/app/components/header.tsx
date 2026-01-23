@@ -29,7 +29,7 @@ export default function Header() {
         <ul className="nav-list">
           {anchorList.map((anchor, index) => (
             <React.Fragment key={anchor.name}>
-              <li key={anchor.name} className="nav-item">
+              <li className="nav-item">
                 <a
                   href={anchor.href}
                   className="nav-link"
@@ -39,7 +39,7 @@ export default function Header() {
                 </a>
               </li>
               {index < anchorList.length - 1 && (
-                <hr className="nav-separator" />
+                <span className="nav-separator">·</span>
               )}
             </React.Fragment>
           ))}
