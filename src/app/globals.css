@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 :root {
-    --background: #F8F8FF;
-    --foreground: #0B1215;
-    --white: #F8F8FF;
-    --black: #0B1215;
+    /* Palette carte de visite - tons papier/encre */
+    --background: #f4efe8;
+    --background-secondary: #ebe6dd;
+    --foreground: #2a2a2a;
+    --foreground-muted: #5a5a5a;
+    --accent: #8b7355;
+    --accent-warm: #a08060;
+    --border: rgba(42, 42, 42, 0.12);
+    --border-strong: rgba(42, 42, 42, 0.25);
+    --white: #faf8f5;
+    --black: #1a1a1a;
 
     /* Variables de polices Crimson Text */
     --font-crimson-text-bold: 'CrimsonText-Bold', serif;
@@ -23,29 +30,79 @@
     --font-scada-bold-italic: 'Scada-BoldItalic', sans-serif;
     --font-scada-italic: 'Scada-Italic', sans-serif;
     --font-scada-regular: 'Scada-Regular', sans-serif;
+
+    /* Ombres subtiles style print */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-crimson-text-bold);
+    font-family: 'Casselin', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--foreground);
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.04em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    letter-spacing: 0.03em;
+}
+
+h3 {
+    font-size: 1.25rem;
 }
 
 p, span {
-    font-family: var(--font-nunito-variable);
+    font-family: var(--font-crimson-text-regular);
+    color: var(--foreground);
+    line-height: 1.6;
 }
 
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--foreground);
+}
+
+/* Mode sombre - tons encre/papier inversés */
 .dark {
-    --background: #0B1215;
-    --foreground: #F8F8FF;
+    --background: #1a1815;
+    --background-secondary: #252220;
+    --foreground: #e8e4dc;
+    --foreground-muted: #a8a49c;
+    --accent: #c4a882;
+    --accent-warm: #d4b892;
+    --border: rgba(232, 228, 220, 0.1);
+    --border-strong: rgba(232, 228, 220, 0.2);
+    --white: #faf8f5;
+    --black: #0f0e0d;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not(.dark):not(.light) {
-        --background: #0B1215;
-        --foreground: #F8F8FF;
+        --background: #1a1815;
+        --background-secondary: #252220;
+        --foreground: #e8e4dc;
+        --foreground-muted: #a8a49c;
+        --accent: #c4a882;
+        --accent-warm: #d4b892;
+        --border: rgba(232, 228, 220, 0.1);
+        --border-strong: rgba(232, 228, 220, 0.2);
     }
 }
 
-/* Déclarations @font-face pour charger les polices */
+/* Déclarations @font-face */
 @font-face {
     font-family: 'CrimsonText-Bold';
     src: url('/assets/font/Crimson_Text/CrimsonText-Bold.ttf') format('truetype');
@@ -144,55 +201,140 @@ p, span {
     font-style: italic;
 }
 
+/* Body avec texture granuleuse */
 body {
-    background-image: url('/assets/images/green_misc.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--background);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-crimson-text-regular);
+    position: relative;
+    min-height: 100vh;
 }
 
-.dark body {
-    background-image: url('/assets/images/rainbow-discs.jpg');
+/* Texture grain de papier - overlay sur tout le site */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.02) 0px,
+            transparent 1px,
+            transparent 3px,
+            rgba(0, 0, 0, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.02) 0px,
+            transparent 1px,
+            transparent 3px,
+            rgba(0, 0, 0, 0.02) 4px
+    );
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 9999;
 }
 
+/* Texture additionnelle plus fine */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.dark body::before {
+    background-image: repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.015) 0px,
+            transparent 1px,
+            transparent 3px,
+            rgba(255, 255, 255, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.015) 0px,
+            transparent 1px,
+            transparent 3px,
+            rgba(255, 255, 255, 0.015) 4px
+    );
+}
+
+/* Header style carte de visite */
 .header {
     position: fixed;
-    margin-left: 10px;
-    margin-top: 10px;
-    font-family: 'CrimsonText-Bold', sans-serif;
-    font-size: 18px;
+    margin-left: 24px;
+    margin-top: 20px;
+    font-family: 'Casselin', serif;
+    font-size: 1.1rem;
     color: var(--foreground);
+    letter-spacing: 0.05em;
+    z-index: 100;
 }
 
+/* Carte style papier - remplace .glass */
+.card {
+    position: relative;
+    background: var(--background-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* Classe legacy .glass convertie */
 .glass {
     position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 1rem;
-    box-shadow: 0 8px 32px rgba(31, 135, 48, 0.2),
-    inset 0 4px 20px rgba(255, 255, 255, 0.3);
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /*background: rgba(255, 255, 255, 0.1);*/
-        border-radius: 1rem;
-        backdrop-filter: blur(1px);
-        box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
-        inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
-        opacity: 0.6;
-        z-index: -1;
-        filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
-    }
+    background: var(--background-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--shadow-card);
 }
 
+/* Bouton style carte de visite */
 .btn-custom {
+    font-family: 'Casselin', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    background: var(--foreground);
+    color: var(--background);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
 
+.btn-custom:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Séparateur élégant */
+.divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border-strong);
+    margin: 1.5rem 0;
+}
+
+/* Selection text */
+::selection {
+    background: var(--accent);
+    color: var(--white);
 }
