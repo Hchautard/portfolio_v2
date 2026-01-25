@@ -25,7 +25,7 @@ export default function Card({
 
   return (
     <div
-      className={`glass flex flex-col items-center justify-center p-4 rounded-lg shadow-lg ${className} hover:scale-[1.03] transition-transform duration-300`}
+      className={`glass flex flex-col items-center justify-center p-4 rounded-lg shadow-lg ${className} ...`}
       onMouseEnter={handleMouseEnter}
       onClick={handleClick}
     >

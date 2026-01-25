@@ -2,12 +2,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 8px;
+    gap: 12px;
     height: 82svh;
     margin: 0 auto;
-    padding: 20px;
-    background-color: black;
-    border-radius: 20px;
+    padding: 24px;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
 }
 
 .one {
@@ -18,18 +20,19 @@
 .two {
     grid-row: span 2 / span 2;
     grid-column-start: 3;
-
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     justify-content: start;
+}
 
-    .two-title {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        align-items: center;
-    }
+.two-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
 }
 
 .three {
@@ -37,7 +40,8 @@
     grid-column-start: 4;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    align-items: flex-start;
 }
 
 .four {
@@ -58,15 +62,56 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px;
+    padding: 20px;
+    /*background: var(--);*/
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
 
-    h1 {
-        margin: 0;
-    }
+.six h1 {
+    margin: 0;
+    font-family: 'Casselin', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
 }
 
 .six-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        height: auto;
+        min-height: 82svh;
+    }
+
+    .one {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .four {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .one, .two, .three, .four, .five, .six {
+        grid-column: 1;
+        grid-row: auto;
+    }
 }

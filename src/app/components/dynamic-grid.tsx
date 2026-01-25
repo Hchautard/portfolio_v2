@@ -5,42 +5,41 @@ import '../styles/dynamic-grid.css';
 import EducationBlock from '@/app/components/grid-content/education-block';
 import ExperienceBlock from '@/app/components/grid-content/experience-block';
 import ProfileBlock from '@/app/components/grid-content/profile-block';
-import ContactBlock from '@/app/components/grid-content/contact-block';
 import StackBlock from '@/app/components/grid-content/stack-block';
 import Project from '@/app/pages/project';
-import { FaStar } from 'react-icons/fa6';
 import AboutMeBlock from '@/app/components/grid-content/about-me-block';
 
 export default function DynamicGrid() {
   return (
     <div className="wrapper">
-      <Card className="glass-card one">
+      <Card className="one">
         <ProfileBlock />
       </Card>
-      <Card className="glass-card two">
+
+      <Card className="two">
         <div className="two-title">
-          <FaStar className="star-icon" size={20} />
-          <p>Ma stack</p>
+          <span className="section-icon">✦</span>
+          <h3>Ma stack (évolutive)</h3>
         </div>
-        <p>Les différentes technos que j'utilise</p>
         <StackBlock />
       </Card>
-      <Card className="glass-card three">
+
+      <Card className="three">
         <ExperienceBlock />
         <EducationBlock />
       </Card>
 
-      <Card className="glass-card four">
+      <Card className="four">
         <Project />
       </Card>
 
       {/* Map */}
-      <Card className="glass-card five">
+      <Card className="five">
         <LeafletMap />
       </Card>
 
       {/* About Me */}
-      <Card className="glass-card six">
+      <Card className="six">
         <AboutMeBlock />
       </Card>
     </div>
