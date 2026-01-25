@@ -8,7 +8,7 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    background: var(--white);
+    background: var(--background);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-card);
 }
@@ -92,7 +92,7 @@
     display: flex;
     gap: 20px;
     width: 100%;
-    background: var(--background);
+    background: var(--white);
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 16px;

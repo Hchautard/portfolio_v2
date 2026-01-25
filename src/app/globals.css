@@ -85,8 +85,8 @@ a:hover {
     --accent-warm: #d4b892;
     --border: rgba(232, 228, 220, 0.1);
     --border-strong: rgba(232, 228, 220, 0.2);
-    --white: #faf8f5;
-    --black: #0f0e0d;
+    --white: #0f0e0d;
+    --black: #f5f3ef;
 }
 
 @media (prefers-color-scheme: dark) {
