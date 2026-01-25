@@ -6,22 +6,25 @@ import {
   TypeScript,
   Python,
   SymfonyLight,
+  NextJs,
 } from 'developer-icons';
 
 export default function StackBlock() {
   const stack = [
     { label: 'React', icon: ReactIcon },
-    { label: 'Node', icon: NodeJs },
+    { label: 'Next.js', icon: NextJs },
+    { label: 'Node.js', icon: NodeJs },
     { label: 'Symfony', icon: SymfonyLight },
-    { label: 'Python', icon: Python },
     { label: 'TypeScript', icon: TypeScript },
+    { label: 'Python', icon: Python },
   ];
 
   return (
     <div className="stack-block">
       {stack.map((tech) => (
         <div key={tech.label} className="tech-item" title={tech.label}>
-          <tech.icon key={tech.label} size={48} color="#ffffff" />
+          <tech.icon size={32} />
+          <span>{tech.label}</span>
         </div>
       ))}
     </div>
