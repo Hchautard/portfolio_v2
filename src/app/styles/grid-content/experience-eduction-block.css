@@ -16,3 +16,39 @@
     font-weight: bold;
     color: var(--accent);
 }
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
+    .experience-block, .education-block {
+        flex-direction: column;
+        gap: 12px;
+
+        h3 {
+            font-size: 1.1rem;
+            width: auto;
+        }
+
+        h3::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+            margin-top: 5px;
+        }
+    }
+}
+
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .experience-block, .education-block {
+        flex-direction: column;
+        gap: 10px;
+
+        h3 {
+            font-size: 1rem;
+            width: auto;
+        }
+    }
+}

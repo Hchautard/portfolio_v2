@@ -75,3 +75,73 @@
     background: var(--foreground);
     border-color: var(--foreground);
 }
+
+/* ========== RESPONSIVE TABLET ========== */
+@media (max-width: 900px) {
+    .switch-dark-mode {
+        top: 16px;
+        right: 16px;
+    }
+
+    .switch-dark-mode button,
+    .switch-dark-mode .toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .switch-dark-mode svg,
+    .switch-dark-mode i {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
+    .switch-dark-mode {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .switch-dark-mode button,
+    .switch-dark-mode .toggle {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        box-shadow: var(--shadow-md);
+    }
+
+    .switch-dark-mode svg,
+    .switch-dark-mode i {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Désactiver le hover sur mobile */
+    .switch-dark-mode button:hover,
+    .switch-dark-mode .toggle:hover {
+        transform: none;
+    }
+
+    .switch-dark-mode button:active,
+    .switch-dark-mode .toggle:active {
+        transform: scale(0.9);
+        background: var(--foreground);
+        color: var(--white);
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .switch-dark-mode {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .switch-dark-mode button,
+    .switch-dark-mode .toggle {
+        width: 44px;
+        height: 44px;
+    }
+}

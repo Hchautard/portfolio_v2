@@ -11,13 +11,11 @@
     border: 1px solid var(--border);
     border-radius: 6px;
     box-shadow: var(--shadow-sm);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 8px;
-
     transition: all 0.2s ease;
     cursor: default;
 }
@@ -52,19 +50,66 @@
     color: var(--foreground);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE TABLET ========== */
 @media (max-width: 900px) {
     .stack-block {
         grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .tech-item {
+        padding: 10px 8px;
+    }
+
+    .tech-item svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tech-item span {
+        font-size: 0.75rem;
     }
 }
 
+/* ========== RESPONSIVE MOBILE ========== */
 @media (max-width: 600px) {
+    .stack-block {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .tech-item {
+        padding: 10px 6px;
+        gap: 6px;
+    }
+
+    .tech-item svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .tech-item span {
+        font-size: 0.7rem;
+    }
+
+    /* Désactiver le hover sur mobile (touch) */
+    .tech-item:hover {
+        transform: none;
+    }
+
+    .tech-item:active {
+        transform: scale(0.95);
+        border-color: var(--accent);
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
     .stack-block {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .tech-item {
-        padding: 10px 8px;
+        padding: 12px 8px;
     }
 }

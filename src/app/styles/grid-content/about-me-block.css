@@ -7,6 +7,7 @@
     background: var(--white);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-card);
+    height: 100%;
 }
 
 .six-header {
@@ -38,17 +39,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .six-paragraph {
     background: var(--background);
-    padding: 10px;
+    padding: 16px;
     line-height: 1.7;
     border-radius: 6px;
     border: 1px solid var(--border);
     font-family: var(--font-crimson-text-regular);
     font-size: 0.9rem;
     color: var(--foreground);
+    flex: 1;
 }
 
 /* Citation/quote style */
@@ -69,4 +72,72 @@
 
 .about-me-block a:hover {
     border-bottom-color: var(--accent);
+}
+
+/* ========== RESPONSIVE TABLET ========== */
+@media (max-width: 900px) {
+    .about-me-block {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .six-header h1,
+    .six-header h2,
+    .six-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .six-paragraph {
+        padding: 14px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
+    .about-me-block {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .six-header {
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .six-header h1,
+    .six-header h2,
+    .six-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .six-icon {
+        height: 16px;
+        width: 16px;
+        padding: 8px;
+    }
+
+    .six-paragraph {
+        padding: 12px;
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .about-me-block {
+        padding: 12px;
+    }
+
+    .six-header h1,
+    .six-header h2,
+    .six-header h3 {
+        font-size: 1rem;
+    }
+
+    .six-paragraph {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
 }

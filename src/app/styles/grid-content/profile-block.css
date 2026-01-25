@@ -29,6 +29,7 @@
     justify-content: center;
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    flex-shrink: 0;
 }
 
 .profile-image {
@@ -51,21 +52,33 @@
     font-size: 1.75rem;
     font-weight: 400;
     letter-spacing: 0.03em;
-    /*margin-bottom: 8px;*/
     color: var(--foreground);
+    margin: 0 0 4px 0;
+}
+
+.intro-wrapper h3 {
+    font-family: var(--font-crimson-text-regular);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--foreground-muted);
+    margin: 0;
 }
 
 .intro-wrapper p {
     font-family: var(--font-crimson-text-italic);
     color: var(--foreground-muted);
     font-size: 1rem;
+    margin: 0;
 }
 
 .intro-available {
     display: flex;
     gap: 10px;
     align-items: center;
-    margin-top: 12px;
+    margin-bottom: 8px;
+    font-family: var(--font-crimson-text-regular);
+    font-size: 0.85rem;
+    color: var(--accent);
 }
 
 /* Badge disponibilité */
@@ -73,7 +86,7 @@
     content: '';
     width: 8px;
     height: 8px;
-    background: green;
+    background: #22c55e;
     border-radius: 50%;
     animation: pulse-subtle 2s ease-in-out infinite;
 }
@@ -90,7 +103,8 @@
 /* Informations principales */
 .profile-infos {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
     width: 100%;
     background: var(--white);
     border: 1px solid var(--border);
@@ -103,28 +117,30 @@
     align-items: center;
     gap: 8px;
     font-family: var(--font-crimson-text-regular);
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--foreground-muted);
+    position: relative;
+    padding-right: 16px;
 }
 
 .profile-infos .info-item svg,
 .profile-infos .info-item i {
     color: var(--accent);
     opacity: 0.8;
+    width: 16px;
+    height: 16px;
 }
 
+/* Séparateur entre items - desktop seulement */
 .profile-infos .info-item:not(:last-child)::after {
     content: '';
     position: absolute;
-    right: -10px;
-    height: 60%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 16px;
     width: 1px;
     background: var(--border);
-}
-
-.profile-infos .info-item {
-    position: relative;
-    padding-right: 20px;
 }
 
 .profile-infos .info-item:last-child {
@@ -133,4 +149,103 @@
 
 .profile-infos .info-item:last-child::after {
     display: none;
+}
+
+/* Réseaux */
+.profile-networks {
+    width: 100%;
+}
+
+/* ========== RESPONSIVE TABLET ========== */
+@media (max-width: 900px) {
+    .profile-block {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .profile-header {
+        gap: 20px;
+    }
+
+    .intro-wrapper h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
+    .profile-block {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .intro-wrapper {
+        text-align: center;
+    }
+
+    .intro-wrapper h2 {
+        font-size: 1.4rem;
+    }
+
+    .intro-wrapper h3 {
+        font-size: 0.95rem;
+    }
+
+    .intro-available {
+        justify-content: center;
+    }
+
+    .profile-infos {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .profile-infos .info-item {
+        justify-content: center;
+        padding-right: 0;
+        font-size: 0.85rem;
+    }
+
+    /* Masquer les séparateurs sur mobile */
+    .profile-infos .info-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-image {
+        width: 120px !important;
+        height: 120px !important;
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .profile-block {
+        padding: 12px;
+    }
+
+    .intro-wrapper h2 {
+        font-size: 1.25rem;
+    }
+
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-image {
+        width: 100px !important;
+        height: 100px !important;
+    }
 }

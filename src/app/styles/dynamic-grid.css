@@ -63,7 +63,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    /*background: var(--);*/
     border: 1px solid var(--border);
     border-radius: 6px;
 }
@@ -83,35 +82,95 @@
     border-bottom: 1px solid var(--border);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE TABLET ========== */
 @media (max-width: 1200px) {
     .wrapper {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         height: auto;
-        min-height: 82svh;
+        min-height: auto;
+        gap: 16px;
     }
 
     .one {
         grid-column: span 2;
-        grid-row: span 2;
+        grid-row: auto;
+    }
+
+    .two {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .three {
+        grid-column: 2;
+        grid-row: auto;
     }
 
     .four {
         grid-column: span 2;
-        grid-row: span 2;
+        grid-row: auto;
+    }
+
+    .five {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .six {
+        grid-column: 2;
+        grid-row: auto;
     }
 }
 
+/* ========== RESPONSIVE MOBILE ========== */
 @media (max-width: 768px) {
     .wrapper {
         grid-template-columns: 1fr;
         padding: 16px;
         gap: 16px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
     }
 
-    .one, .two, .three, .four, .five, .six {
+    .one, .two, .three, .four, .six {
         grid-column: 1;
         grid-row: auto;
+        width: 100%;
+    }
+
+    .five {
+        display: none;
+    }
+
+    .six {
+        padding: 16px;
+    }
+
+    .six h1 {
+        font-size: 1.25rem;
+    }
+
+    .two-title {
+        flex-wrap: wrap;
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .six h1 {
+        font-size: 1.1rem;
+    }
+
+    .six-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
 }

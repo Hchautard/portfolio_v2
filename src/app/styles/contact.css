@@ -135,6 +135,8 @@
     font-size: 1rem;
     color: var(--foreground);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-group input::placeholder,
@@ -170,6 +172,8 @@
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .submit-btn:hover {
@@ -226,7 +230,7 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Responsive */
+/* ========== RESPONSIVE TABLET ========== */
 @media (max-width: 968px) {
     .contact-content {
         grid-template-columns: 1fr;
@@ -237,6 +241,7 @@
         width: 90%;
         padding: 2rem;
         gap: 2rem;
+        max-height: none;
     }
 
     .contact-header h1 {
@@ -244,10 +249,24 @@
     }
 }
 
-@media (max-width: 640px) {
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
     .contact-wrapper {
-        width: 95%;
+        width: 100%;
         padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .contact-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .contact-header p {
+        font-size: 1rem;
+    }
+
+    .contact-header::after {
+        margin: 1.5rem auto 0;
     }
 
     .info-item {
@@ -257,8 +276,62 @@
         padding: 1.5rem;
     }
 
+    .info-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .info-text h3 {
+        font-size: 1rem;
+    }
+
+    .info-text p {
+        font-size: 0.9rem;
+    }
+
     .contact-form {
         padding: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 16px; /* Évite le zoom sur iOS */
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+    }
+
+    /* Désactiver hover sur mobile */
+    .info-item:hover,
+    .social-link:hover,
+    .submit-btn:hover {
+        transform: none;
+    }
+
+    .info-item:active,
+    .social-link:active {
+        transform: scale(0.98);
+        border-color: var(--accent);
+    }
+
+    .submit-btn:active {
+        transform: scale(0.98);
+        background: var(--accent);
     }
 
     .social-links {
@@ -268,5 +341,35 @@
     .social-link {
         width: 44px;
         height: 44px;
+    }
+
+    .contact-social h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .contact-wrapper {
+        padding: 1rem;
+    }
+
+    .contact-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+    }
+
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
     }
 }

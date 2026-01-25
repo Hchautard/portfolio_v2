@@ -7,8 +7,6 @@
     color: var(--foreground);
     letter-spacing: 0.06em;
     z-index: 100;
-
-    /* Fond subtil pour lisibilité */
     background: var(--background);
     padding: 12px 20px;
     border-radius: 6px;
@@ -60,8 +58,8 @@
     user-select: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ========== RESPONSIVE TABLET ========== */
+@media (max-width: 900px) {
     .header {
         left: 16px;
         top: 16px;
@@ -69,7 +67,48 @@
     }
 
     .nav-link {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
+    .header {
+        left: 12px;
+        right: 12px;
+        top: 12px;
+        padding: 10px 14px;
+        width: auto;
+    }
+
+    .nav-list {
+        justify-content: center;
+        width: 100%;
+        gap: 4px;
+    }
+
+    .nav-link {
         font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .nav-separator {
+        font-size: 0.7rem;
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .header {
+        left: 8px;
+        right: 8px;
+        top: 8px;
+        padding: 8px 12px;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
         padding: 4px 8px;
     }
 }

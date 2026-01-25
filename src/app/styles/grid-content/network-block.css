@@ -32,11 +32,10 @@
     border-color: var(--foreground);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+}
 
-    span {
-        color: var(--white);
-        text-decoration: underline;
-    }
+.badge:hover span {
+    color: var(--white);
 }
 
 .badge svg {
@@ -49,6 +48,7 @@
     font-size: 0.85rem;
 }
 
+/* Variantes */
 .badge.badge-accent {
     background: var(--accent);
     color: var(--white);
@@ -70,12 +70,56 @@
     color: var(--background);
 }
 
-@media (max-width: 600px) {
+/* ========== RESPONSIVE TABLET ========== */
+@media (max-width: 900px) {
     .badge {
-        padding: 8px 12px;
+        padding: 10px 14px;
+    }
+}
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 600px) {
+    .network-block {
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .badge {
+        padding: 10px 14px;
+        flex: 1 1 auto;
+        min-width: 0;
+        justify-content: center;
     }
 
     .badge span {
-        display: none;
+        font-size: 0.8rem;
+    }
+
+    .badge svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Désactiver le hover sur mobile */
+    .badge:hover {
+        transform: none;
+    }
+
+    .badge:active {
+        transform: scale(0.95);
+        background: var(--foreground);
+        color: var(--white);
+    }
+}
+
+/* ========== RESPONSIVE SMALL MOBILE ========== */
+@media (max-width: 380px) {
+    .network-block {
+        flex-direction: column;
+    }
+
+    .badge {
+        width: 100%;
+        justify-content: center;
     }
 }
