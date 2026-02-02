@@ -17,7 +17,10 @@ export default function Home() {
       </main>
 
       <footer className="home-footer">
-        <p>© 2025 Hugo Chautard · Tous droits réservés</p>
+        <p>
+          © {new Date().getFullYear() ?? 2026} Hugo Chautard · Tous droits
+          réservés
+        </p>
       </footer>
     </div>
   );
