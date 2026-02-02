@@ -127,25 +127,6 @@
     opacity: 1;
 }
 
-.custom-btn .project-title {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    font-family: 'Casselin', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    z-index: 2;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.custom-btn:hover .project-title {
-    transform: translateY(0);
-    opacity: 1;
-}
 
 .custom-btn:hover {
     border-color: var(--accent);
@@ -238,12 +219,6 @@
     .custom-btn:active {
         transform: scale(0.98);
         border-color: var(--accent);
-    }
-
-    /* Afficher le titre en permanence sur mobile */
-    .custom-btn .project-title {
-        transform: translateY(0);
-        opacity: 1;
     }
 
     .custom-btn::before {

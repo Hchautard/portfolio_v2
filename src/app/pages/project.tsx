@@ -1,27 +1,10 @@
 import Card from '@/app/components/card';
 import '../styles/project-grid.css';
+import AnomalieBlock from '@/app/components/project-content/anomalie-block';
+import FromagerieBlock from '@/app/components/project-content/fromagerie-block';
+import CerisonetBlock from '@/app/components/project-content/cerisonet-block';
 
 export default function Project() {
-  const projects = [
-    {
-      title: 'Projet Principal',
-      description: 'Description du projet',
-      image: '/assets/images/project-1.jpg',
-    },
-    {
-      title: 'Projet 2',
-      image: '/assets/images/project-2.jpg',
-    },
-    {
-      title: 'Projet 3',
-      image: '/assets/images/project-3.jpg',
-    },
-    {
-      title: 'Projet 4',
-      image: '/assets/images/project-4.jpg',
-    },
-  ];
-
   return (
     <div className="wrapper-project">
       <Card className="one-project">
@@ -31,19 +14,19 @@ export default function Project() {
 
       <Card className="two-project">
         <div className="project-card-content">
-          <span className="project-title">{projects[1]?.title}</span>
+          <AnomalieBlock />
         </div>
       </Card>
 
       <Card className="three-project">
         <div className="project-card-content">
-          <span className="project-title">{projects[2]?.title}</span>
+          <FromagerieBlock />
         </div>
       </Card>
 
       <Card className="four-project">
         <div className="project-card-content">
-          <span className="project-title">{projects[3]?.title}</span>
+          <CerisonetBlock />
         </div>
       </Card>
 
