@@ -10,7 +10,7 @@ export default function FromagerieBlock() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span className="project-title">Une Fromagerie</span>
+        <h2 className="project-title">Une Fromagerie</h2>
         <Image
           src="/assets/images/une_fromagerie_landing_page.jpg"
           alt="Anomalie Project"

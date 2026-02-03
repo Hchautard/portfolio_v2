@@ -4,8 +4,12 @@ import Image from 'next/image';
 export default function AnomalieBlock() {
   return (
     <div className="project-block">
-      <a href="lanomalie.com" target="_blank" rel="noopener noreferrer">
-        <span className="project-title">L&#39;Anomalie</span>
+      <a
+        href="https://www.lanomalie.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h2 className="project-title">L&#39;Anomalie</h2>
         <div className="image-container">
           <Image
             src="/assets/images/machine_tattoo_landing_page.jpg"

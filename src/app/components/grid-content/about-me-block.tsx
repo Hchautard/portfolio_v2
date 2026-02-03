@@ -10,9 +10,9 @@ export default function AboutMeBlock() {
       </div>
       <p className="six-paragraph">
         Développeur passionné par la création de solutions innovantes qui ont un
-        impact positif sur la vie des gens. J'aime relever des défis techniques
-        et apprendre de nouvelles technologies pour améliorer continuellement
-        mes compétences.
+        impact positif sur la vie des gens. J&apos;aime relever des défis
+        techniques et apprendre de nouvelles technologies pour améliorer
+        continuellement mes compétences.
       </p>
     </div>
   );
