@@ -1,13 +1,11 @@
 'use client';
 import DynamicGrid from '@/app/components/dynamic-grid';
-import Header from '@/app/components/header';
 import SwitchDarkMode from '@/app/components/switch-dark-mode';
 import '../styles/home.css';
 
 export default function Home() {
   return (
     <div className="home-container">
-      {/*<Header />*/}
       <SwitchDarkMode />
 
       <main className="main-content" id="main">
