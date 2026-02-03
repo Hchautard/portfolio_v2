@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* For tailwind to force class mod for dark */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
     /* Palette carte de visite - tons papier/encre */
     --background: #f4efe8;
@@ -250,7 +253,8 @@ body::after {
     z-index: 9998;
 }
 
-.dark body::before {
+.dark body::before,
+html.dark body::before {
     background-image: repeating-linear-gradient(
             0deg,
             rgba(255, 255, 255, 0.015) 0px,
