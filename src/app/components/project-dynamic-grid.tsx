@@ -41,50 +41,7 @@ export default function ProjectDynamicGrid() {
   const playSound = useSound('assets/sounds/hey_listen_navy.mp3', 4000);
 
   // fake data for the card : title, description, image, link
-  const projects = [
-    {
-      title: 'Project 1',
-      description: 'Description 1',
-      image: '/assets/images/31.jpg',
-      link: '#',
-      gradient: 'bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500',
-    },
-    {
-      title: 'Project 2',
-      description: 'Description 2',
-      image: '/assets/images/32.jpg',
-      link: '#',
-      gradient: 'bg-gradient-to-r from-cyan-500 to-blue-500',
-    },
-    {
-      title: 'Project 3',
-      description: 'Description 3',
-      image: '/assets/images/43.jpg',
-      link: '#',
-      gradient: 'bg-gradient-to-r from-green-400 to-blue-500',
-    },
-    {
-      title: 'Project 4',
-      description: 'Description 4',
-      image: '/assets/images/44.jpg',
-      link: '#',
-      gradient: 'bg-gradient-to-r from-purple-400 via-pink-500 to-red-500',
-    },
-    {
-      title: 'Project 5',
-      description: 'Description 5',
-      image: '/assets/images/47.jpg',
-      link: '#',
-      gradient: 'bg-gradient-to-r from-yellow-400 to-red-500',
-    },
-    {
-      title: 'Project 6',
-      description: 'Description 6',
-      image: '/assets/images/48.jpg',
-      link: '#',
-      gradient: 'bg-gradient-to-r from-indigo-400 to-purple-500',
-    },
-  ];
+  const projects: any[] = [];
 
   return (
     <div className="project-wrapper">

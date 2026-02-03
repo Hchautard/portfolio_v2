@@ -11,10 +11,11 @@ export default function CerisonetBlock() {
       >
         <span className="project-title">CerisoNet (back)</span>
         <Image
-          src="/assets/images/machine_tattoo_landing_page.jpg"
+          src="/assets/images/cerisonet_login_page.jpg"
           alt="Anomalie Project"
           className="project-image"
           fill={true}
+          objectFit="cover"
         />
       </a>
     </div>
