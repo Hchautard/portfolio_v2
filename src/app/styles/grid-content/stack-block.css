@@ -1,3 +1,14 @@
+/* ===== CONTAINER ===== */
+.stack-container {
+    position: relative;
+    width: 100%;
+}
+
+.stack-container.has-carousel {
+    padding: 0 40px;
+}
+
+/* ===== GRID ===== */
 .stack-block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -26,7 +37,6 @@
     box-shadow: var(--shadow-md);
 }
 
-/* Icône tech */
 .tech-item svg {
     width: 28px;
     height: 28px;
@@ -38,7 +48,6 @@
     opacity: 1;
 }
 
-/* Label tech */
 .tech-item span {
     font-family: var(--font-crimson-text-regular);
     font-size: 0.8rem;
@@ -50,8 +59,73 @@
     color: var(--foreground);
 }
 
-/* ========== RESPONSIVE TABLET ========== */
+/* ===== CAROUSEL CONTROLS ===== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--foreground);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--white);
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+/* ===== DOTS ===== */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot:hover {
+    background: var(--foreground-muted);
+}
+
+.dot.active {
+    background: var(--accent);
+    transform: scale(1.2);
+}
+
+/* ===== RESPONSIVE TABLET ===== */
 @media (max-width: 900px) {
+    .stack-container.has-carousel {
+        padding: 0 36px;
+    }
+
     .stack-block {
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
@@ -69,10 +143,20 @@
     .tech-item span {
         font-size: 0.75rem;
     }
+
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
 }
 
-/* ========== RESPONSIVE MOBILE ========== */
+/* ===== RESPONSIVE MOBILE ===== */
 @media (max-width: 600px) {
+    .stack-container.has-carousel {
+        padding: 0;
+    }
+
     .stack-block {
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
@@ -92,7 +176,6 @@
         font-size: 0.7rem;
     }
 
-    /* Désactiver le hover sur mobile (touch) */
     .tech-item:hover {
         transform: none;
     }
@@ -101,9 +184,22 @@
         transform: scale(0.95);
         border-color: var(--accent);
     }
+
+    .carousel-btn {
+        display: none;
+    }
+
+    .carousel-dots {
+        margin-top: 12px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
 }
 
-/* ========== RESPONSIVE SMALL MOBILE ========== */
+/* ===== RESPONSIVE SMALL MOBILE ===== */
 @media (max-width: 380px) {
     .stack-block {
         grid-template-columns: repeat(2, 1fr);
