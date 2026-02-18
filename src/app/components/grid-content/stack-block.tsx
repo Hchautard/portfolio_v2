@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import '../../styles/grid-content/stack-block.css';
 import {
   React as ReactIcon,
@@ -25,38 +25,20 @@ export default function StackBlock() {
 
   const isCarousel = stack.length > 6;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const intervalRef = useRef(null);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(stack.length / itemsPerPage);
 
-  useEffect(() => {
-    if (isCarousel && isAutoPlaying) {
-      intervalRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % totalPages);
-      }, 4000);
-    }
-
-    return () => clearInterval(intervalRef.current);
-  }, [isCarousel, isAutoPlaying, totalPages]);
-
-  const goToPage = (index) => {
+  const goToPage = (index: number) => {
     setCurrentIndex(index);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
   const goToPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev + 1) % totalPages);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
   const visibleStack = isCarousel
