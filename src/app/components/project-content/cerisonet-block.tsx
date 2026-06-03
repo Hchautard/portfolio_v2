@@ -12,10 +12,9 @@ export default function CerisonetBlock() {
         <h2 className="project-title">CerisoNet (back)</h2>
         <Image
           src="/assets/images/cerisonet_login_page.jpg"
-          alt="Anomalie Project"
+          alt="CerisoNet - aperçu de la page de connexion"
           className="project-image"
           fill={true}
-          objectFit="cover"
         />
       </a>
     </div>

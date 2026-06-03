@@ -37,7 +37,7 @@ export default function ProfileBlock() {
             <span>Disponible</span>
           </div>
 
-          <h2>Hugo Chautard</h2>
+          <h1>Hugo Chautard</h1>
           <p>Développeur Full Stack</p>
         </div>
       </div>

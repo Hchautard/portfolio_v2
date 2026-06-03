@@ -13,10 +13,9 @@ export default function FromagerieBlock() {
         <h2 className="project-title">Une Fromagerie</h2>
         <Image
           src="/assets/images/une_fromagerie_landing_page.jpg"
-          alt="Anomalie Project"
+          alt="Une Fromagerie - aperçu du site"
           className="project-image"
           fill={true}
-          objectFit="cover"
         />
       </a>
     </div>

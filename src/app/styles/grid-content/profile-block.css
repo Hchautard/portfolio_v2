@@ -47,7 +47,7 @@
     text-align: left;
 }
 
-.intro-wrapper h2 {
+.intro-wrapper h1 {
     font-family: 'Casselin', serif;
     font-size: 1.75rem;
     font-weight: 400;
@@ -167,7 +167,7 @@
         gap: 20px;
     }
 
-    .intro-wrapper h2 {
+    .intro-wrapper h1 {
         font-size: 1.5rem;
     }
 }
@@ -189,7 +189,7 @@
         text-align: center;
     }
 
-    .intro-wrapper h2 {
+    .intro-wrapper h1 {
         font-size: 1.4rem;
     }
 
@@ -235,7 +235,7 @@
         padding: 12px;
     }
 
-    .intro-wrapper h2 {
+    .intro-wrapper h1 {
         font-size: 1.25rem;
     }
 

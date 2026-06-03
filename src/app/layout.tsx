@@ -14,9 +14,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Hchautard · Portfolio',
+  metadataBase: new URL('https://hchautard.fr'),
+  title: 'Hugo Chautard · Développeur Full Stack',
+  description:
+    'Portfolio de Hugo Chautard, développeur Full Stack basé à Montpellier. Spécialisé en React, Next.js, Symfony et Node.js.',
   icons: {
     icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'Hugo Chautard · Développeur Full Stack',
+    description:
+      'Portfolio de Hugo Chautard, développeur Full Stack basé à Montpellier. Spécialisé en React, Next.js, Symfony et Node.js.',
+    url: 'https://hchautard.fr',
+    siteName: 'Hugo Chautard',
+    images: [
+      {
+        url: '/assets/images/pp.jpeg',
+        width: 400,
+        height: 400,
+        alt: 'Hugo Chautard - Développeur Full Stack',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Hugo Chautard · Développeur Full Stack',
+    description:
+      'Portfolio de Hugo Chautard, développeur Full Stack basé à Montpellier.',
+    images: ['/assets/images/pp.jpeg'],
   },
 };
 
@@ -40,10 +67,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <title>Hchautard · Portfolio</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
