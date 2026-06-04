@@ -46,7 +46,7 @@ export default function ProfileBlock() {
       <div className="profile-infos">
         {informations.map((info) => (
           <div key={info.text} className="info-item">
-            <FontAwesomeIcon icon={info.icon} />
+            <FontAwesomeIcon icon={info.icon} aria-hidden={true} />
             <span>{info.text}</span>
           </div>
         ))}

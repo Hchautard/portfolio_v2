@@ -40,7 +40,7 @@ export default function Contact() {
           </div>
 
           <div className="info-item">
-            <div className="info-icon">
+            <div className="info-icon" aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -62,7 +62,7 @@ export default function Contact() {
           </div>
 
           <div className="info-item">
-            <div className="info-icon">
+            <div className="info-icon" aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -84,7 +84,7 @@ export default function Contact() {
           </div>
 
           <div className="info-item">
-            <div className="info-icon">
+            <div className="info-icon" aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -48,22 +48,40 @@ export default function StackBlock() {
       )
     : stack;
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (!isCarousel) return;
+    if (e.key === 'ArrowLeft') goToPrev();
+    if (e.key === 'ArrowRight') goToNext();
+  };
+
   return (
-    <div className={`stack-container ${isCarousel ? 'has-carousel' : ''}`}>
+    <div
+      className={`stack-container ${isCarousel ? 'has-carousel' : ''}`}
+      role={isCarousel ? 'region' : undefined}
+      aria-label={isCarousel ? 'Carousel de technologies' : undefined}
+      onKeyDown={handleKeyDown}
+    >
       {isCarousel && (
         <button
           className="carousel-btn prev"
           onClick={goToPrev}
-          aria-label="Précédent"
+          aria-label="Page précédente"
         >
           ‹
         </button>
       )}
 
       <div className="stack-block">
+        {isCarousel && (
+          <span className="sr-only" aria-live="polite">
+            Page {currentIndex + 1} sur {totalPages}
+          </span>
+        )}
         {visibleStack.map((tech) => (
-          <div key={tech.label} className="tech-item" title={tech.label}>
-            <tech.icon size={32} />
+          <div key={tech.label} className="tech-item">
+            <div aria-hidden="true">
+              <tech.icon size={32} />
+            </div>
             <span>{tech.label}</span>
           </div>
         ))}
@@ -73,20 +91,22 @@ export default function StackBlock() {
         <button
           className="carousel-btn next"
           onClick={goToNext}
-          aria-label="Suivant"
+          aria-label="Page suivante"
         >
           ›
         </button>
       )}
 
       {isCarousel && (
-        <div className="carousel-dots">
+        <div className="carousel-dots" role="tablist" aria-label="Pages du carousel">
           {Array.from({ length: totalPages }).map((_, index) => (
             <button
               key={index}
+              role="tab"
               className={`dot ${index === currentIndex ? 'active' : ''}`}
               onClick={() => goToPage(index)}
               aria-label={`Page ${index + 1}`}
+              aria-selected={index === currentIndex}
             />
           ))}
         </div>

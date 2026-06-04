@@ -18,7 +18,7 @@ export default function DynamicGrid() {
 
       <Card className="two">
         <div className="two-title">
-          <span className="section-icon">✦</span>
+          <span className="section-icon" aria-hidden="true">✦</span>
           <h3>Ma stack (évolutive)</h3>
         </div>
         <StackBlock />
